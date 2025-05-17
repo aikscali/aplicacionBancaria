@@ -35,6 +35,10 @@ public class aplicacionBanco {
                 case 2:
                     System.out.println("Ingrese el monto a retirar: ");
                     float montoRetiro = teclado.nextFloat();
+                    if (montoRetiro > saldo) {
+                        System.out.println("No tiene saldo suficiente para realizar el retiro");
+                        break;
+                    }
                     saldo -= montoRetiro;
                     System.out.printf("su nuevo saldo es $%.2f: ", saldo);
                     break;
@@ -44,6 +48,8 @@ public class aplicacionBanco {
                     case 4:
                     System.out.println("Gracias por utilizar nuestro servicio");
                     break;
+                default:
+                    System.out.println("Opcion no valida");
             }
         }
         teclado.close();
